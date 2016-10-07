@@ -10,7 +10,7 @@ export default class ImportPlaylist extends BaseCommand {
     async handleCommand(params) {
         params = params;
 
-        const mat = params.match(/^(https?:\/\/)?play.spotify.com\/user\/([^\/]+)\/playlist\/([^\/]+)$/i);
+        const mat = params.match(/^(https?:\/\/)?((?:play)|(?:open))\.spotify\.com\/user\/([^\/]+)\/playlist\/([^\/]+)$/i);
 
         if (!mat || !mat[2] || !mat[3]) {
             throw new CommandError('Please enter a valid spotify playlist url');
