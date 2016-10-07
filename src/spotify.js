@@ -75,7 +75,7 @@ export async function getPlaylistTrackPage(username, playListId, pageNumber=0, l
 }
 
 export async function getAllSongIds(username, playListId) {
-    const limit = 100;
+    const limit = 20;
 
     let firstPage;
 

@@ -22,7 +22,7 @@ export default class ImportPlaylist extends BaseCommand {
             const res = await getAllSongIds(mat[2], mat[3]);
             allSongs = [...new Set(res)];
         } catch(err) {
-            throw new CommandError(`Error occured: ${err.message}`);
+            throw new CommandError(`Error occured while downloading song list: ${err.message}`);
         }
 
         if (!allSongs.length) {
@@ -43,7 +43,7 @@ export default class ImportPlaylist extends BaseCommand {
         try {
             await Promise.all(promises);
         } catch(err) {
-            throw new CommandError(`Error occured: ${err.message}`);
+            throw new CommandError(`Error occured while adding tracks to playlist: ${err.message}`);
         }
 
         return `Successfully imported playlist (${allSongs.length} songs) from url ${params}`;
