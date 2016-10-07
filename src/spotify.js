@@ -85,7 +85,7 @@ export async function getAllSongIds(username, playListId) {
         throw e;
     }
 
-    if (firstPage.items.length < firstPage.totalCount) {
+    if (firstPage.items.length >= firstPage.totalCount) {
         return firstPage.items;
     } else {
         const promises = [[...firstPage.items], ];
