@@ -115,6 +115,7 @@ export default class CommandList {
             try {
                 const res = await this.commands[cmd].runCommand(cmdBody);
                 return {
+                    response_type: "in_channel",
                     message: res,
                 };
             } catch(error) {
