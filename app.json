@@ -1,6 +1,33 @@
 {
-  "name": "Slackbox",
-  "description": "Spotify playlist collaboration through Slack.",
-  "repository": "https://github.com/benchmarkstudios/slackbox",
-  "keywords": ["slack", "spotify"]
+    "name": "Slackbox",
+    "description": "Spotify playlist collaboration through Slack.",
+    "repository": "https://github.com/thorgate/slackbox",
+    "keywords": ["slack", "spotify"],
+    "addons": [
+        "memcachier:32"
+    ],
+    "env": {
+        "NPM_CONFIG_PRODUCTION": {
+            "description": "By default Heroku is not installing `devDependencies`, but we want babel for transpiling our code",
+            "value": "false"
+        },
+        "SLACK_TOKEN": {
+            "description": "The token from Slack's Slash Command"
+        },
+        "SPOTIFY_KEY": {
+            "description": "Your Spotify application key (a.k.a Client ID)"
+        },
+        "SPOTIFY_SECRET": {
+            "description": "Your Spotify application secret (a.k.a Client Secret)"
+        },
+        "SPOTIFY_USERNAME": {
+            "description": "Your Spotify username"
+        },
+        "SPOTIFY_PLAYLIST_ID": {
+            "description": "Your playlist identifier"
+        },
+        "SPOTIFY_REDIRECT_URI": {
+            "description": "URI to redirect to once your user has allowed the application's permissions"
+        }
+    }
 }
