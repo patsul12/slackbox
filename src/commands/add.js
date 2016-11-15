@@ -19,6 +19,9 @@ export default class AddCommand extends SearchCommand {
             throw new CommandError(`Error occured: ${err.message}`);
         }
 
-        return `Track added: *${track.name}* by *${track.artists[0].name}*`;
+        return {
+          response_type: "in_channel",
+          text: `Track added: *${track.name}* by *${track.artists[0].name}*`
+        };
     };
 }
