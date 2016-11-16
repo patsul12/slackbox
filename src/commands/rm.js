@@ -21,6 +21,9 @@ export default class RemoveCommand extends SearchCommand {
             throw new CommandError(`Error occured: ${err.message}`);
         }
 
-        return `Track removed: *${track.name}* by *${track.artists[0].name}*`;
+        return {
+          response_type: "in_channel",
+          text: `Track removed: *${track.name}* by *${track.artists[0].name}*`
+        };
     };
 }
